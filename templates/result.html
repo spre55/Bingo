@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+  <!-- Form
+  ================================================== -->
+<h1>ベンチャー検定</h1>
+<h2>{{ name }}さんの結果!!</h2>
+
+<div class="form">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="lead">
+                ベンチャー
+                    {% if venture_point > 40 %}
+                        初段!
+                    {% elif venture_point > 30 %}
+                        1級
+                    {% elif venture_point > 20 %}
+                        2級
+                    {% else %}
+                        入門
+                    {% endif %}
+                </p>
+<a href="https://twitter.com/share" class="twitter-share-button" data-text="ベンチャー検定 :{% if venture_point > 40 %}初段!{% elif venture_point > 30 %}1級{% elif venture_point > 20 %}2級{% else %}入門{% endif %}" data-size="large" data-hashtags="venture_kentei">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <form action="/" class="form-inline">
+                    <button type="submit" class="btn btn-default">もどる</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
