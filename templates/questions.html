@@ -1,21 +1,21 @@
 {% extends "layout.html" %}
 {% block content %}
 <script src="/static/js/jquery.min.js"></script>
-<h1>ベンチャー検定</h1>
-<h2>あなたはベンチャー検定何級?</h2>
+<div class="jumbotron page-header text-center">
+    <h1>ベンチャー検定</h1>
+        <p class="lead">
+        {% if name %}
+            こんにちは<span class="text-info" > {{ name }} </span>さん<br>
+        {% endif %}
+            累計ベンチャーポイント: <span class="text-info" >{{ venture_point }} </span>
+        </p>
+</div>
 
 <div class="form">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <p class="lead">
-                  {% if name %}
-                  こんにちは {{ name }} さん
-                  {% endif %}
-                  累計ベンチャーポイント: {{ venture_point }}
-                </p>
-                <h3>質問 {{ i }} : {{ question }}</h3>
-
+                <h2>質問 {{ i }} : {{ question }}</h2>
                 <form action="/questions" method="POST" class="form-inline">
                     <input type="hidden" id="answer" name="venture_point" />
                     <input type="hidden" name="name" value="{{ name }}" id="name"/>
