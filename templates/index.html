@@ -2,21 +2,17 @@
 {% block content %}
 
 <div class="jumbotron page-header text-center">
-    <h1>ベンチャー検定 <br> <small>あなたはベンチャー検定何級?</small></h1>
+    <h1>ビンゴビンゴしってるかい <br> <small>子犬の名前はビンゴ！</small></h1>
 </div>
 
 <div class="form">
     <div class="container">
         <div class="row">
         <div class="col-xs-12">
-            <form action="/questions" method="POST" class="form-inline text-center">
+            <form action="/bingo" method="POST" class="form-inline text-center">
             <div class="input-group">
-                <input type="hidden" name="venture_point" value="0" />
                 <input type="hidden" name="i" value="0" />
-                <label class="sr-only" for="name" >名前</label>
-                <span class="input-group-addon form-control">あなたのお名前は?</span>
-                <input type="text" class="form-control" id="name" name="name" placeholder="名前を入力してね!">
-                <span class="input-group-addon"><button type="submit" class="btn btn-default">はじめる</button></span>
+                <button type="submit" class="btn btn-default">はじめる</button>
             </div>
             </form>
         </div>
